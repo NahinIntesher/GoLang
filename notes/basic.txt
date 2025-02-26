@@ -1,0 +1,77 @@
+# GoLang Learning Notes
+
+## Introduction
+- Go, also known as Golang, is a statically typed, compiled programming language designed at Google.
+- It is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency.
+
+## Installation
+1. Download and install Go from the official website: https://golang.org/dl/
+2. Set up your Go workspace by configuring the `GOPATH` environment variable.
+
+## Basic Syntax
+- A Go program starts with the `package` keyword.
+- The `main` package is the entry point of the program.
+- Functions are defined using the `func` keyword.
+
+### Variables
+------------------------------------------------------
+- Declared using `var` keyword.
+- Short declaration using `:=` inside functions.
+- Example:
+  ```go
+  var name string = "Go"
+  age := 25 // Type inferred
+  ```
+
+### Data Types
+------------------------------------------------------
+- Basic types: `string`, `int`, `float64`, `bool`
+- Composite types: `array`, `slice`, `map`, `struct`
+- Example:
+  ```go
+  var numbers []int = []int{1, 2, 3}
+  person := map[string]string{"name": "John", "age": "30"}
+  ```
+
+### Constants
+------------------------------------------------------
+- Declared using `const` keyword.
+- Example:
+  ```go
+  const Pi = 3.14159
+  ```
+
+## Time Handling in GoLang
+------------------------------------------------------
+- Go provides the `time` package for working with dates and time.
+- Example of getting the current time:
+  ```go
+  import (
+      "fmt"
+      "time"
+  )
+
+  func main() {
+      now := time.Now()
+      fmt.Println("Current Time:", now)
+  }
+  ```
+
+- Formatting time using `Format` method:
+  ```go
+  formatted := now.Format("2006-01-02 15:04:05")
+  fmt.Println("Formatted Time:", formatted)
+  ```
+
+- Parsing a time string:
+  ```go
+  layout := "2006-01-02 15:04:05"
+  parsedTime, err := time.Parse(layout, "2025-02-26 12:00:00")
+  if err != nil {
+      fmt.Println("Error parsing time:", err)
+  }
+  fmt.Println("Parsed Time:", parsedTime)
+  
+
+  
+------------------------------------------------------
